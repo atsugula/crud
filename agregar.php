@@ -6,7 +6,7 @@ $last_name = $_POST["last_name"];
 $email = $_POST["email"];
 $phone = $_POST["phone"];
 
-$sql = "INSERT INTO usuarios (name, last_name, email, phone)
+$sql = "INSERT INTO users (name, last_name, email, phone)
         VALUES ('$name', '$last_name', '$email', '$phone')";
 
 if (mysqli_query($conn, $sql)) {

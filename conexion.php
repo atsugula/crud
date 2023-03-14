@@ -4,9 +4,9 @@
     $password = "";
     $bd = "crud";
 
-    $conexion = mysqli_connect($host, $user, $password, $bd);
+    $conn = mysqli_connect($host, $user, $password, $bd);
 
-    if (!$conexion) {
+    if (!$conn) {
         die("Error de conexión: " . mysqli_connect_error());
     }
 ?>

@@ -19,7 +19,7 @@
 		</tr>
         <?php
             include "conexion.php";
-            $result = mysqli_query($conexion, "SELECT * FROM users");
+            $result = mysqli_query($conn, "SELECT * FROM users");
             if ($result->num_rows > 0){
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<tr>";
@@ -28,9 +28,12 @@
                     echo "<td>" . $row["last_name"] . "</td>";
                     echo "<td>" . $row["email"] . "</td>";
                     echo "<td>" . $row["phone"] . "</td>";
-                    echo "</tr>";
+                    echo "<td>";
                     echo "<a href='formulario.php?id=" . $row['id'] . "'>Leer</a> ";
                     echo "<a href='formulario.php?id=" . $row['id'] . "'>Actualizar</a> ";
+                    echo "<a href='formulario.php?id=" . $row['id'] . "'>Eliminar</a> ";
+                    echo "</td>";
+                    echo "</tr>";
                 }
             } else {
                 echo 'No hay datos.';
